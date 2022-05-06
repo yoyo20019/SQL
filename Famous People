@@ -1,0 +1,65 @@
+/* Create table about the people and what they do here */
+CREATE TABLE famous_people (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    fullname TEXT,
+    age INTEGER, 
+    hometown TEXT,
+    spouse_id integer);
+    
+INSERT INTO famous_people (fullname, age,hometown,spouse_id) VALUES ("Tom Hanks", "65","Masschusett",11);
+INSERT INTO famous_people (fullname, age,hometown) VALUES ("Tom Cruise", "59","New York");
+INSERT INTO famous_people (fullname, age,hometown) VALUES ("Julia Roberts", "54","Georgia");
+INSERT INTO famous_people (fullname, age,hometown,spouse_id) VALUES ("Nicole Kidman", "54","Hawaii",10);
+INSERT INTO famous_people (fullname, age,hometown) VALUES ("Tom Hindleston", "41","England");
+INSERT INTO famous_people (fullname, age,hometown) VALUES ("Taylor Swift", "32","Pennslyvannia");
+INSERT INTO famous_people (fullname, age,hometown) VALUES ("Gwen Stefani", "52","California");
+INSERT INTO famous_people (fullname, age,hometown) VALUES ("Stephen King", "70","Maine");
+INSERT INTO famous_people (fullname, age,hometown) VALUES ("JK Rowling", "56","England");
+INSERT INTO famous_people (fullname, age,hometown) VALUES ("Keith Urban", "54","New Zealand");
+INSERT INTO famous_people (fullname, age,hometown) VALUES ("Rita Wilson", "65","California");
+
+
+
+CREATE table career (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    person_id INTEGER,
+    job TEXT,
+    project TEXT);
+    
+INSERT INTO career (person_id, job,project) VALUES (1, "actor","Forest Gump");
+INSERT INTO career (person_id, job,project) VALUES (2, "actor","Edge of Tomorrow");
+INSERT INTO career (person_id, job,project) VALUES (3, "actor","Ocean 11");
+INSERT INTO career (person_id, job,project) VALUES (4, "actor","Moulin Rouge");
+INSERT INTO career (person_id, job,project) VALUES (5, "actor","Avengers");
+INSERT INTO career (person_id, job,project) VALUES (6, "singer","Shake it Off");
+INSERT INTO career (person_id, job,project) VALUES (7, "singer","Nobody But You");
+INSERT INTO career (person_id, job,project) VALUES (8, "author","Shining");
+INSERT INTO career (person_id, job,project) VALUES (9, "author","Harry Potter and the Sorcerer Stone");
+INSERT INTO career (person_id, job,project) VALUES (10, "singer","One Too Many");
+INSERT INTO career (person_id, job,project) VALUES (11, "actor","Mama Mia");
+
+/*Famous people and what they do*/
+select famous_people.fullname, career.job from famous_people
+join career
+on famous_people.id=career.id;
+
+/*Movie stars: What movies are they in? Are they married to each other?*/
+select famous_people.fullname as Actors, career.project as Movies,spouse.fullname as Spouse_Fullname from famous_people
+join career 
+on famous_people.id=career.id
+left outer join famous_people spouse
+on famous_people.id=spouse.spouse_id
+where career.job="actor";
+
+/*Singers: What songs did they write? Where are they from?*/
+select famous_people.fullname as Singers, career.project as Songs,famous_people.hometown from famous_people 
+join career
+on famous_people.id=career.id
+where career.job="singer";
+
+/*Authors: What books did they write?*/
+select famous_people.fullname as Authors, career.project as Books from famous_people 
+join career
+on famous_people.id=career.id
+where career.job="author";
+
