@@ -1,4 +1,4 @@
-
+/*In this SQL code, I'm querying a database that's holding gradebook data to answer questions about the data using CASE statement.*/
 CREATE TABLE student_grades (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT,
