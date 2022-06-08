@@ -1,23 +1,30 @@
-create table store(id integer, name text,price integer,brand text, quantity integer);
+/*In this SQL code, I'm querying a database that's holding Grocery Store Database to answer questions about the data using ORDER BY and GROUP BY.*/ 
 
-insert into store values(1,"shirt",9.99,"Nike",100);
+CREATE TABLE store(id integer, name text,price integer,brand text, quantity integer);
 
-insert into store values(2,"short",7.99,"Nike",100);
-insert into store values(3,"cap",12.99,"Nike",100);
-insert into store values(5,"sunglasses",9.99,"Shade",25);
-insert into store values(4,"socks",6.99,"Nike",50);
-insert into store values(6,"shirt",11.99,"Adidas",100);
-insert into store values(7,"shoes",199.99,"Air Jordan",100);
-insert into store values(8,"socks",5.99,"Adidas",50);
-insert into store values(9,"keychain",4.99,"Sunshine",30);
-insert into store values(10,"jacket",49.99,"NBA",50);
-insert into store values(11,"jersey",99.99,"NBA",30);
-insert into store values(12,"watch",19.99,"Sunshine",25);
-insert into store values(13,"bracelet",9.99,"Sunshine",25);
-insert into store values(14,"earring",5.99,"Sunshine",25);
-insert into store values(15,"scarf",9.99,"Sunshine",25);
-select * from store order by price;
-select * from store where price>50 order by price;
-select * from store group by brand;
+/*INSERT values into the store TABLE*/
 
-select * from store;
+INSERT into store VALUES(1,"shirt",9.99,"Nike",100);
+INSERT into store VALUES(2,"short",7.99,"Nike",100);
+INSERT into store VALUES(3,"cap",12.99,"Nike",100);
+INSERT into store VALUES(5,"sunglasses",9.99,"Shade",25);
+INSERT into store VALUES(4,"socks",6.99,"Nike",50);
+INSERT into store VALUES(6,"shirt",11.99,"Adidas",100);
+INSERT into store VALUES(7,"shoes",199.99,"Air Jordan",100);
+INSERT into store VALUES(8,"socks",5.99,"Adidas",50);
+INSERT into store VALUES(9,"keychain",4.99,"Sunshine",30);
+INSERT into store VALUES(10,"jacket",49.99,"NBA",50);
+INSERT into store VALUES(11,"jersey",99.99,"NBA",30);
+INSERT into store VALUES(12,"watch",19.99,"Sunshine",25);
+INSERT into store VALUES(13,"bracelet",9.99,"Sunshine",25);
+INSERT into store VALUES(14,"earring",5.99,"Sunshine",25);
+INSERT into store VALUES(15,"scarf",9.99,"Sunshine",25);
+
+
+SELECT * FROM store ORDER BY price;
+
+SELECT * FROM store WHERE price>50 ORDER BY price;
+
+SELECT * FROM store GROUP BY brand;
+
+SELECT * FROM store;
