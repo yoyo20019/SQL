@@ -1,8 +1,0 @@
-#In this SQL code, I'm querying a database that's holding books data to answer questions about the data. 
-
-create table books (id integer,name text, rating text);
-
-insert into books values ( 1, "Little Women", 10);
-insert into books values (2,"
-All Creatures Great and Small",9);
-insert into books values (3,"The Odyssey",7);
