@@ -1,3 +1,5 @@
+/*In this SQL code, I'm querying a database that's holding IMDb data to answer questions about the data.*/
+
 /* Create table about the people and what they do here */
 CREATE TABLE famous_people (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
