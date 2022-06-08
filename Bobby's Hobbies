@@ -1,4 +1,4 @@
-#In this SQL code, I'm querying a database that's holding persons and hobbies data to answer questions about the data using INSERT and JOIN. 
+/*In this SQL code, I'm querying a database that's holding persons and hobbies data to answer questions about the data using INSERT and JOIN.*/ 
 
 CREATE TABLE persons (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
