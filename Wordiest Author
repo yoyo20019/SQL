@@ -1,3 +1,5 @@
+/*In this SQL code, I'm querying a database that's holding Books and Authors data to answer questions about the data using GROUP BY and HAVING.*/ 
+
 CREATE TABLE books (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     author TEXT,
